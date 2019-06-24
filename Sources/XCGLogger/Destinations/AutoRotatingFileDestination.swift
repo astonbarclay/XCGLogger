@@ -110,14 +110,14 @@ open class AutoRotatingFileDestination: FileDestination {
         baseFileName = writeToFileURL.lastPathComponent
         if let fileExtensionRange: Range = baseFileName.range(of: ".\(fileExtension)", options: .backwards),
           fileExtensionRange.upperBound >= baseFileName.endIndex {
-            baseFileName = baseFileName[baseFileName.startIndex ..< fileExtensionRange.lowerBound]
+            baseFileName = String(baseFileName[baseFileName.startIndex ..< fileExtensionRange.lowerBound])
         }
 
         let filePath: String = writeToFileURL.path
         let logFileName: String = "\(baseFileName).\(fileExtension)"
         if let logFileNameRange: Range = filePath.range(of: logFileName, options: .backwards),
           logFileNameRange.upperBound >= filePath.endIndex {
-            let archiveFolderPath: String = filePath[filePath.startIndex ..< logFileNameRange.lowerBound]
+            let archiveFolderPath: String = String(filePath[filePath.startIndex ..< logFileNameRange.lowerBound])
             archiveFolderURL = URL(fileURLWithPath: "\(archiveFolderPath)")
         }
         if archiveFolderURL == nil {
@@ -266,7 +266,7 @@ open class AutoRotatingFileDestination: FileDestination {
     /// - Returns:  Nothing
     ///
     open override func write(message: String) {
-        currentLogFileSize += UInt64(message.characters.count)
+        currentLogFileSize += UInt64(message.count)
 
         super.write(message: message)
 
