@@ -142,13 +142,13 @@ public func | (lhs: Dictionary<String, Any>, rhs: UserInfoTaggingProtocol) -> Di
 public extension UserInfoFilter {
 
     /// Initializer to create an inclusion list of tags to match against
-    ///
+    ///@
     /// Note: Only log messages with a specific tag will be logged, all others will be excluded
     ///
     /// - Parameters:
     ///     - tags: Array of UserInfoTaggingProtocol objects to match against.
     ///
-    public convenience init(includeFrom tags: [UserInfoTaggingProtocol]) {
+    convenience init(includeFrom tags: [UserInfoTaggingProtocol]) {
         var names: [String] = []
         for tag in tags {
             names.append(tag.name)
@@ -164,7 +164,7 @@ public extension UserInfoFilter {
     /// - Parameters:
     ///     - tags: Array of UserInfoTaggingProtocol objects to match against.
     ///
-    public convenience init(excludeFrom tags: [UserInfoTaggingProtocol]) {
+    convenience init(excludeFrom tags: [UserInfoTaggingProtocol]) {
         var names: [String] = []
         for tag in tags {
             names.append(tag.name)
