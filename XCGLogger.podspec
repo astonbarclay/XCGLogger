@@ -1,22 +1,21 @@
 Pod::Spec.new do |spec|
 
 	spec.name = 'XCGLogger'
-	spec.version = '5.0.1'
+	spec.version = '6.0.0'
 	spec.summary = 'A debug log module for use in Swift projects.'
 
 	spec.description = <<-DESC
 						Allows you to log details to the console (and optionally a file), just like you would have with NSLog() or print(), but with additional information, such as the date, function name, filename and line number.
 						DESC
 
-	spec.homepage = 'https://github.com/DaveWoodCom/XCGLogger'
+	spec.homepage = 'https://github.com/astonbarclay/XCGLogger'
 
 	spec.license = { :type => 'MIT', :file => 'LICENSE.txt' }
-	spec.author = { 'Dave Wood' => 'cocoapods@cerebralgardens.com' }
-	spec.social_media_url = 'http://twitter.com/DaveWoodX'
+	spec.author = { 'Soheb Mahmodo' => 'soheb@humboldt.co.uk' }
 	spec.platforms = { :ios => '7.0', :watchos => '2.0', :tvos => '9.0' }
 	spec.requires_arc = true
 
-	spec.source = { :git => 'https://github.com/DaveWoodCom/XCGLogger.git', :tag => '5.0.1' }
+	spec.source = { :git => 'https://github.com/astonbarclay/XCGLogger.git', :tag => '6.0.0' }
 
 	spec.ios.deployment_target = '8.0'
 	spec.osx.deployment_target = '10.10'
